@@ -1,16 +1,22 @@
 package com.bridgelabz.generic;
 
-public class GenericDataTypeArrayPrinting <T> {
+public class GenericDataTypeArrayPrinting <X,Y,Z> {
 	
-	private T[] inputArray;
+	private X[] myXArray;
+	private Y[] myYArray;
+	private Z[] myZArray;
 	
-	public GenericDataTypeArrayPrinting(T[] inputArray) {
+	public GenericDataTypeArrayPrinting(X[] myXArray, Y[] myYArray, Z[] myZArray) {
 		super();
-		this.inputArray = inputArray;
+		this.myXArray = myXArray;
+		this.myYArray = myYArray;
+		this.myZArray = myZArray;
 	}
-	
+
 	public void toPrint() {
-		GenericDataTypeArrayPrinting.toPrint(this.inputArray);
+		GenericDataTypeArrayPrinting.toPrint(myXArray);
+		GenericDataTypeArrayPrinting.toPrint(myYArray);
+		GenericDataTypeArrayPrinting.toPrint(myZArray);
 	}
 
 	public static <E> void toPrint(E[] inputArray) {
@@ -25,9 +31,7 @@ public class GenericDataTypeArrayPrinting <T> {
 		Double[] douubleArray = {2.1,3.6,6.7,16.65};
 		Character[] charArray = {'a' , 'b' , 'c' , 'd'};
 		
-		new GenericDataTypeArrayPrinting(intArray).toPrint();
-		new GenericDataTypeArrayPrinting(douubleArray).toPrint();
-		new GenericDataTypeArrayPrinting(charArray).toPrint();
+		new GenericDataTypeArrayPrinting<Integer,Double,Character>(intArray,douubleArray,charArray).toPrint();
 	}
 
 }
